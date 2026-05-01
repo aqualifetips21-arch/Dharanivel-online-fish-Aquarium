@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharanivel Aquarium Shop</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#eef6fb}
+header{background:linear-gradient(90deg,#006d77,#00afb9);color:#fff;text-align:center;padding:15px}
+section{padding:20px}
+.grid{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.card{background:#fff;padding:15px;border-radius:12px;width:200px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:0.3s}
+.card:hover{transform:translateY(-5px)}
+.card:active{transform:scale(0.95);background:#caf0f8}
+.card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+.profile{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:10px}
+.profile img{width:70px;height:70px;border-radius:50%;border:3px solid #fff;object-fit:cover}
+
+button{background:#219ebc;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;transition:0.2s}
+button:hover{transform:scale(1.05)}
+button:active{transform:scale(0.9);background:#0077b6}
+
+.cart{background:#fff;padding:15px;margin-top:20px;border-radius:10px}
+.qty-btn{padding:3px 8px;margin:0 3px}
+
+input,textarea{width:100%;padding:8px;margin:5px 0;border-radius:5px;border:1px solid #ccc}
+
+.success{background:#d4edda;color:#155724;padding:10px;margin-top:15px;border-radius:8px}
+
+footer{background:#023047;color:#fff;text-align:center;padding:10px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Dharanivel Aquarium Shop</h1>
+<p>Live Fish Online Store</p>
+
+<div class="profile">
+<img src="myphoto.png.jpeg">
+<div>
+<p>@aqualifetips</p>
+<button onclick="openInsta()">FOLLOW MY INSTAGRAM</button>
+</div>
+</div>
+</header>
+
+<section>
+<h2>Fish Collection</h2>
+
+<div class="grid">
+<div class="card">
+<img src="https://i.pinimg.com/736x/f1/81/56/f18156fe51755d3c3241976ac0617348.jpg">
+<h3>Goldfish (PAIR)</h3>
+<p>₹100</p>
+<button onclick="addToCart('Goldfish')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://coburgaquarium.com.au/cdn/shop/files/CoburgAquariumBluetigerguppy.jpg?v=1698036353">
+<h3>Fancy Guppy (PAIR)</h3>
+<p>₹50</p>
+<button onclick="addToCart('Fancy Guppy')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://5.imimg.com/data5/GY/VH/LC/ANDROID-67940375/1561970263608-jpg.jpg">
+<h3>Betta Fullmoon(MALE)</h3>
+<p>₹100</p>
+<button onclick="addToCart('Betta')">Add</button>
+</div>
+</div>
+
+<h2>Accessories</h2>
+<div class="grid">
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVao0UuoNxK_ykkn9TUIMJF2VV3iXRe7U-gg&s">
+<h3>Aquarium Filter</h3>
+<p>₹200</p>
+<button onclick="addToCart('Filter')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://5.imimg.com/data5/SELLER/Default/2025/3/494337457/DQ/IJ/OS/125358341/sobo-sb-548a-aquarium-air-pump-500x500.jpg">
+<h3>Air Pump
+ (1M Tube FREE)</h3>
+<p>₹200</p>
+<button onclick="addToCart('Air Pump')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRtL1MV5IftGnSO2Koqy2ndTXS05zmn1IWQQCZLnYwsIxv5j3boQ-db5rUgFi-sOumCtpDHrN5clWh3pyMmwf8VS_5ARe2AktA448x2gLkF3lZuqoXS2dzeAA">
+<h3>LED Light</h3>
+<p>₹200</p>
+<button onclick="addToCart('LED Light')">Add</button>
+</div>
+</div>
+
+<h2>Fish Food</h2>
+<div class="grid">
+<div class="card">
+<img src="https://cdn.grofers.com/da/cms-assets/cms/product/633203f2-a760-4ee2-9b3a-4d880d6202d6.jpg">
+<h3>TAIYO Fish Food 200 g</h3>
+<p>₹120</p>
+<button onclick="addToCart('TAIYO Fish Food 200 g')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQpaWZlBuwNSdz9UtTTDBFooIsZKRMkCTKql8dFJPNpaOP20Iy62FvgJ8aW6RoiE7Bel9S1_GilxSdydcFt7pIVZ_KyJO5cUc4HEWY5p-WmyEmc5SV8A6VUhw">
+<h3>Horizone Royal Breeding Feed for Guppy 22g</h3>
+<p>₹80</p>
+<button onclick="addToCart('Horizone Royal Breeding Feed for Guppy 22g')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/61wwULeqYYL.jpg">
+<h3>Royal Betta Pellet Fish Feed 22g</h3>
+<p>₹90</p>
+<button onclick="addToCart('Royal Betta Pellet Fish Feed 22g')">Add</button>
+</div>
+</div>
+
+<div class="cart">
+<h2>Cart</h2>
+
+<ul id="cartList"></ul>
+<h3 id="totalPrice">Total: ₹0</h3>
+
+<button onclick="clearCart()">Clear Cart</button>
+
+<form onsubmit="handleSubmit(event)">
+<h3>Customer Details</h3>
+
+<input id="name" placeholder="Name" required>
+<textarea id="address" placeholder="Address" required></textarea>
+<input id="pincode" placeholder="Pincode" required>
+<input id="phone" placeholder="Phone" required>
+
+<button type="button" onclick="getLocation()">Get Live Location</button>
+<p id="locationText"></p>
+
+<button type="submit">Place Order</button>
+</form>
+
+<div id="successBox"></div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 AquaLife</p>
+</footer>
+
+<script>
+
+let cart = {};
+let mapLink = "";
+
+let prices = {
+"Goldfish":100,
+"Fancy Guppy":50,
+"Betta":100,
+"Filter":200,
+"Air Pump":200,
+"LED Light":200,
+"TAIYO Fish Food 200 g":120,
+"Horizone Royal Breeding Feed for Guppy 22g":80,
+"Royal Betta Pellet Fish Feed 22g":90
+};
+
+let DELIVERY = 100;
+
+function openInsta(){
+window.open("https://www.instagram.com/aqualifetips");
+}
+
+function addToCart(item){
+cart[item] = (cart[item] || 0) + 1;
+displayCart();
+}
+
+function changeQty(item,change){
+cart[item] += change;
+if(cart[item] <= 0) delete cart[item];
+displayCart();
+}
+
+function clearCart(){
+cart = {};
+displayCart();
+}
+
+function displayCart(){
+let list = document.getElementById('cartList');
+list.innerHTML = '';
+
+let total = 0;
+
+if(Object.keys(cart).length === 0){
+list.innerHTML = "<p>Cart is empty</p>";
+document.getElementById('totalPrice').innerText = "Total: ₹0";
+return;
+}
+
+for(let item in cart){
+let itemTotal = prices[item] * cart[item];
+total += itemTotal;
+
+let li = document.createElement('li');
+li.innerHTML = `${item} (₹${prices[item]}) 
+<button class='qty-btn' onclick="changeQty('${item}',-1)">-</button>
+${cart[item]}
+<button class='qty-btn' onclick="changeQty('${item}',1)">+</button>
+= ₹${itemTotal}`;
+list.appendChild(li);
+}
+
+total += DELIVERY;
+
+document.getElementById('totalPrice').innerText = 
+"Total: ₹" + total + " (₹100 Delivery included)";
+}
+
+function getLocation(){
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(pos=>{
+let lat = pos.coords.latitude;
+let lng = pos.coords.longitude;
+
+mapLink = `https://www.google.com/maps?q=${lat},${lng}`;
+
+document.getElementById('locationText').innerHTML =
+`<a href="${mapLink}" target="_blank">Open Location</a>`;
+});
+}else{
+alert("Location not supported");
+}
+}
+
+// ✅ ONLY REQUIRED VALIDATION (no name restriction)
+function handleSubmit(e){
+e.preventDefault();
+
+let name = document.getElementById('name').value.trim();
+let address = document.getElementById('address').value.trim();
+let phone = document.getElementById('phone').value.trim();
+let pincode = document.getElementById('pincode').value.trim();
+
+if(address.length < 10){
+alert("Enter full address");
+return;
+}
+
+if(!/^\d{10}$/.test(phone)){
+alert("Enter valid 10-digit phone number");
+return;
+}
+
+if(!/^\d{6}$/.test(pincode)){
+alert("Enter valid 6-digit pincode");
+return;
+}
+
+if(Object.keys(cart).length === 0){
+alert("Cart is empty");
+return;
+}
+
+let total = 0;
+let cartText = "";
+
+for(let item in cart){
+let itemTotal = prices[item] * cart[item];
+total += itemTotal;
+cartText += `• ${item} x${cart[item]} (₹${itemTotal})\n`;
+}
+
+total += DELIVERY;
+
+let msg = `🐟 *Dharanivel Aquarium Order*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📍 Address: ${address}
+📮 Pincode: ${pincode}
+
+🛒 Items:
+${cartText}
+
+🚚 Delivery: ₹100 (Tamil Nadu)
+💰 Total: ₹${total}
+
+📍 Location:
+${mapLink || "Not shared"}`;
+
+window.open(`https://wa.me/919789646209?text=${encodeURIComponent(msg)}`);
+
+document.getElementById('successBox').innerHTML =
+`<div class='success'>Order Sent Successfully!</div>`;
+}
+
+</script>
+
+</body>
+</html>
